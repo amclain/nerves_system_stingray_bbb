@@ -1,8 +1,8 @@
 defmodule NervesSystemBbb.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_bbb
+  @github_organization "amclain"
+  @app :nerves_system_stingray_bbb
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -12,7 +12,7 @@ defmodule NervesSystemBbb.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.14",
       compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
@@ -66,7 +66,7 @@ defmodule NervesSystemBbb.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.6.0 or ~> 1.7.15 or ~> 1.8", runtime: false},
+      {:nerves, "~> 1.6.0 or ~> 1.7.15 or ~> 1.8 or ~> 1.9", runtime: false},
       {:nerves_system_br, "1.21.4", runtime: false},
       {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.6.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
