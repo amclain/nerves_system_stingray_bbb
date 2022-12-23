@@ -42,7 +42,13 @@ defmodule NervesSystemBbb.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "#{@github_organization}/#{@app}"}
+        {
+          :github_api,
+          "#{@github_organization}/#{@app}",
+          tag: "v" <> @version,
+          username: System.get_env("ARTIFACT_GITHUB_USER"),
+          token: System.get_env("ARTIFACT_GITHUB_TOKEN")
+        }
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
