@@ -1,4 +1,4 @@
-defmodule NervesSystemBbb.MixProject do
+defmodule NervesSystemStingrayBbb.MixProject do
   use Mix.Project
 
   @github_organization "amclain"
@@ -46,8 +46,8 @@ defmodule NervesSystemBbb.MixProject do
           :github_api,
           "#{@github_organization}/#{@app}",
           tag: "v" <> @version,
-          username: System.get_env("ARTIFACT_GITHUB_USER"),
-          token: System.get_env("ARTIFACT_GITHUB_TOKEN")
+          username: System.get_env("ARTIFACT_GITHUB_USER", ""),
+          token: System.get_env("ARTIFACT_GITHUB_TOKEN", "")
         }
       ],
       build_runner_opts: build_runner_opts(),
@@ -74,9 +74,10 @@ defmodule NervesSystemBbb.MixProject do
     [
       {:nerves, "~> 1.6.0 or ~> 1.7.15 or ~> 1.8 or ~> 1.9", runtime: false},
       {:nerves_system_br, "1.21.4", runtime: false},
-      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.6.0", runtime: false},
+      {:nerves_toolchain_armv7_nerves_linux_gnueabihf, "~> 1.6.1", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
-      {:ex_doc, "~> 0.22", only: :docs, runtime: false}
+      {:ex_doc, "~> 0.22", only: :docs, runtime: false},
+      {:jason, "~> 1.4"},
     ]
   end
 
