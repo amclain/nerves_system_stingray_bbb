@@ -1,4 +1,4 @@
-defmodule NervesSystemBbb.MixProject do
+defmodule NervesSystemStingrayBbb.MixProject do
   use Mix.Project
 
   @github_organization "amclain"
