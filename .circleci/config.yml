@@ -40,6 +40,7 @@ workflows:
           exec:
             <<: *exec
           context: nerves-build
+          github-token: ARTIFACT_GITHUB_TOKEN
           requires:
             - build-tools/build-system
           filters:

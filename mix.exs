@@ -46,8 +46,8 @@ defmodule NervesSystemBbb.MixProject do
           :github_api,
           "#{@github_organization}/#{@app}",
           tag: "v" <> @version,
-          username: System.get_env("ARTIFACT_GITHUB_USER"),
-          token: System.get_env("ARTIFACT_GITHUB_TOKEN")
+          username: System.get_env("ARTIFACT_GITHUB_USER", ""),
+          token: System.get_env("ARTIFACT_GITHUB_TOKEN", "")
         }
       ],
       build_runner_opts: build_runner_opts(),
