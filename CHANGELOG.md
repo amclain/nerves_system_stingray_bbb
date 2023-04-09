@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.4
+
+This release pulls in changes from upstream BBB system v2.17.2.
+
+- nerves_system_bbb - [v2.17.2](https://github.com/nerves-project/nerves_system_bbb/releases/tag/v2.17.2)
+- nerves_system_br - [v1.22.5](https://github.com/nerves-project/nerves_system_br/releases/tag/v1.22.5)
+- Erlang/OTP - [25.3](https://erlang.org/download/OTP-25.3.README)
+
 ## v1.0.3
 
 This release pulls in changes from upstream BBB system v2.17.1.
